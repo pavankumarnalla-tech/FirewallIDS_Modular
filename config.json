@@ -1,0 +1,7 @@
+{
+  "poll_interval_seconds": 2,
+  "window_seconds": 60,
+  "new_connections_threshold": 8,
+  "ignore_private_ips_for_detection": false,
+  "log_file": "logs/ids_events.jsonl"
+}
