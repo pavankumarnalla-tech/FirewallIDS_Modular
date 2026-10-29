@@ -1,4 +1,8 @@
 """Member 2: Transparent heuristic detection; never labels an IP as certainly malicious."""
+# Analyzes observed network connection events for suspicious activity.
+# Tracks unique connections from each remote IP within a configurable time window.
+# Raises transparent heuristic alerts when the configured connection threshold is reached.
+# It reports indicators of a possible burst without declaring an IP definitively malicious.
 from __future__ import annotations
 from collections import defaultdict, deque
 from datetime import datetime, timedelta, timezone

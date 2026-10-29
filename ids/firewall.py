@@ -1,4 +1,8 @@
 """Safe wrapper around the PowerShell firewall module. Dry-run is the default."""
+# Provides a controlled interface for managing Windows firewall block rules.
+# Validates that requested addresses are private IPv4 LAN addresses before making changes.
+# Uses dry-run behavior by default and requires explicit confirmation to apply a rule.
+# Executes the PowerShell firewall script and returns its status and command output.
 from __future__ import annotations
 import ipaddress
 import subprocess

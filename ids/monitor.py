@@ -1,4 +1,8 @@
 """Member 1: Collect snapshots of established TCP connections on Windows."""
+# Collects snapshots of currently established TCP connections on Windows.
+# Filters out invalid, local-only, and non-established connections before creating events.
+# Converts each valid connection into a structured event with endpoint and timestamp data.
+# The monitor yields only newly observed connections to avoid duplicate processing.
 from __future__ import annotations
 import ipaddress
 import socket

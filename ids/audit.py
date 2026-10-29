@@ -1,4 +1,7 @@
 """Member 3: Append-only JSON Lines audit logging and summary reporting."""
+# Records intrusion-detection events in an append-only JSON Lines log.
+# Adds a UTC timestamp to each record so activity can be reviewed chronologically.
+# Also summarizes the number of events, alerts, and firewall actions that were logged.
 from __future__ import annotations
 import json
 from pathlib import Path
