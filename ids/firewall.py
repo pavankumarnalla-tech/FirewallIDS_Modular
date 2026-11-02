@@ -25,7 +25,7 @@ def apply_block_rule(remote_ip: str, powershell_script: str = "powershell/Firewa
     safe_ip = validate_private_lan_ip(remote_ip)
     script_path = Path(powershell_script).resolve()
     if not script_path.exists():
-        raise FileNotFoundError(f"PowerShell module not found: {script_path}")
+        raise FileNotFoundError(f"Error: PowerShell module not found: {script_path}")
     command = [
         "powershell.exe", "-NoProfile", "-ExecutionPolicy", "RemoteSigned",
         "-File", str(script_path), "-Action", "Add", "-RemoteIP", safe_ip

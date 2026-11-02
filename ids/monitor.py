@@ -3,6 +3,7 @@
 # Filters out invalid, local-only, and non-established connections before creating events.
 # Converts each valid connection into a structured event with endpoint and timestamp data.
 # The monitor yields only newly observed connections to avoid duplicate processing.
+
 from __future__ import annotations
 import ipaddress
 import socket
@@ -43,7 +44,7 @@ def collect_established_connections() -> list[ConnectionEvent]:
         connections = psutil.net_connections(kind="tcp")
     except (psutil.AccessDenied, OSError) as exc:
         raise RuntimeError(
-            "Cannot read TCP connections. Try running PowerShell/Terminal as Administrator."
+            "Error: Cannot read TCP connections. Try running with PowerShell/Terminal as Administrator."
         ) from exc
 
     for conn in connections:
